@@ -2,7 +2,10 @@
 import React from 'react'
 import { motion } from "framer-motion";
 
-const ToggleButton = ({ setOpen }) => {
+interface ToggleButtonProps {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>; 
+}
+const ToggleButton: React.FC<ToggleButtonProps> = ({ setOpen }) => {
   return (
     <button onClick={() => setOpen((prev) => !prev)} className='absolute top-5 left-5 z-[9999]'>
       <svg width="23" height="23" viewBox="0 0 23 23">
